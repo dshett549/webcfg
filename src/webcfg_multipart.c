@@ -2266,7 +2266,7 @@ void checkValidURL(char **s) {
         start += 8;
 
         // If the next character is '/', it means MAC address is missing
-        if (*start == '/') {
+        if (*start == '/' || strcmp(start, "000000000000") == 0) {
         
             WebcfgError("Device MAC EMPTY\n");
             strncpy(modified_url, *s, start - *s);
